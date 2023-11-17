@@ -1,6 +1,7 @@
 import React from 'react'
 import Add from '../common/Add.icon'
 import Tweet from '../../components/Tweet/Tweet'
+import Tweet2 from '../../components/common/tweet2'
 export default function MainHomeFeed() {
   return (
     <>

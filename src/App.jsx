@@ -9,6 +9,7 @@ import Home from './pages/HomeFeed'
 import UserProfile from './pages/UserProfile'
 import EditProfile from './pages/EditProfile';
 import ComposeTweet from './pages/ComposeTweet';
+import Test from './pages/test2';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
 {/* <UserProfile /> */}
 {/* <EditProfile /> */}
 {/* <ComposeTweet /> */}
+{/* <Test></Test> */}
   </>
 
    )

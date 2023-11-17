@@ -45,6 +45,7 @@ export default function Button({dimension='whitebutton',disabled,size='m',colour
       size:PropTypes.oneOf(['s','m','l']).isRequired,
       colour:PropTypes.oneOf(['white','black','blue']).isRequired,
       type:PropTypes.oneOf(['defaultblue','defaultwhite','outlined']).isRequired,
+      children:PropTypes.node,
 
     }
 
