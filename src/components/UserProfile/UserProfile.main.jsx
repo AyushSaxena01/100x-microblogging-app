@@ -1,6 +1,6 @@
 import React from 'react'
 import Add from '../common/Add.icon'
-import Tweet from '../Tweet/Tweet'
+import Tweet from '../Tweet/Post'
 export default function MainUserProfile() {
   return (
     <>

@@ -1,7 +1,7 @@
 import React from "react";
 import logo from '../../assets/100.svg';
 import x from '../../assets/Group 27162.svg';
-import avatar from '../../assets/avtar.png'
+import Avtar from "../common/Avtar";
 import Nav from "./Nav";
 
 export default function HeaderHomeFeed() {
@@ -12,11 +12,7 @@ export default function HeaderHomeFeed() {
           <section className="flex gap-x-32  w-96.5 justify-start  items-center py-3 px-4">
             <a href="userprofile.html">
                 {/* Profile picture */}
-              <img
-                className="w-9 h-9 rounded-full"
-                src={avatar}
-                alt = 'avtar'
-              />
+              <Avtar imgUrl='src/assets/avtar.png' size='s'/>
             </a>
             <div className="flex justify-center items-end gap-0.4">
               {/* 100 img */}

@@ -4,6 +4,7 @@ import avatar from '../../assets/avtar.png'
 import EditPhoto from '../EditProfile/EditPhoto.icon'
 import CancelIcon from '../EditProfile/Cancel.icon'
 import Arrowleft from '../../assets/arrow-left.svg'
+import Avtar from '../common/Avtar'
 
 export default function HeaderEditProfile() {
   return (
@@ -27,12 +28,18 @@ export default function HeaderEditProfile() {
       <section className="relative">
         <div className="flex items-center justify-center  self-stretch">
           <img className="w-82.5 h-48.5 shrink-0" src={wallimg} alt="Cover pic" />
-          <img className="h-4.25 w-4.25 shrink-0 rounded-full object-cover self-start border-4 border-black border-solid absolute top-36 left-4" src={avatar} alt />
+          <div className="h-4.25 w-4.25 shrink-0 rounded-full object-cover self-start border-4 border-black border-solid absolute top-36 left-4" >
+            <Avtar imgUrl='src/assets/avtar.png' size='l' />
+          </div>
           <div className="absolute top-40 left-8">
+            <button>
             <EditPhoto />
+            </button>
           </div>
           <div className="flex justify-center items-center flex-row w-full h-full absolute gap-2">
+          <button>
           <EditPhoto />
+          </button>
           <CancelIcon />
           </div>
         </div>
