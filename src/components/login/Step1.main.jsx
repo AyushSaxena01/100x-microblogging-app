@@ -1,19 +1,45 @@
 import React from 'react'
+import { useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext'
+import { useNavigate } from 'react-router-dom';
+
 import Button from '../common/Button'
 import Input from '../common/Input'
 import InputEmail from '../common/InputEmail'
 import Dob from '../common/Dob'
-import PropTypes from 'prop-types';
 
-export default function MainStep1({onChangeName, onChangeEmail, onChangeMonth, onChangeDay, onChangeYear, onSubmit}) {
+export default function MainStep1() {
 
-  MainStep1.propTypes={
-    onChangeName:PropTypes.func.isRequired,
-    onChangeEmail:PropTypes.func.isRequired,
-    onChangeMonth:PropTypes.func.isRequired,
-    onChangeDay:PropTypes.func.isRequired,
-    onChangeYear:PropTypes.func.isRequired,
-    onSubmit:PropTypes.func.isRequired,
+  const navigate = useNavigate();
+  const {loggedIn, setLoggedIn } = useContext(AuthContext);
+
+  const emailCheck = ()=>{
+   const email = loggedIn['email'];
+    if(email.includes('@') && email.includes('.com')){
+      navigate('/step2');
+    } else {
+      alert("enter valid email");
+    }
+  }
+
+  const onChangeName = (e)=>{
+    setLoggedIn({...loggedIn,name:e.target.value})
+  }
+
+  const onChangeEmail = (e)=>{
+    setLoggedIn({...loggedIn,email:e.target.value})
+  }
+
+  const onChangeMonth = (e)=>{
+    setLoggedIn({...loggedIn,dobMonth:e.target.value})
+  }
+
+  const onChangeDay = (e)=>{
+    setLoggedIn({...loggedIn,dobDay:e.target.value})
+  }
+
+  const onChangeYear = (e)=>{
+    setLoggedIn({...loggedIn,dobYear:e.target.value})
   }
 
   return (
@@ -41,7 +67,7 @@ export default function MainStep1({onChangeName, onChangeEmail, onChangeMonth, o
     </main>
     <footer className="flex flex-grow flex-shrink-0 basis-0 px-3.8 w-96.5 pb-5">
       <div className="flex pt-20 pb-0 px-5 flex-col justify-end items-center gap-y-0.3 flex-grow flex-shrink-0 basis-0">
-      <Button type="defaultwhite"  size="m" colour = 'black' dimension='whitebutton' onClick={onSubmit}>Create account</Button>
+      <Button type="defaultwhite"  size="m" colour = 'black' dimension='whitebutton' onClick={emailCheck}>Create account</Button>
       </div>
     </footer>
     </>

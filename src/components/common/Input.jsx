@@ -5,8 +5,6 @@ export default function Input({type, onChange}) {
 
     const Type={
         name:"Name",
-        password:"Password",
-        varification:"Varification Code",
         location:"Location",
         website:"Website"
     }

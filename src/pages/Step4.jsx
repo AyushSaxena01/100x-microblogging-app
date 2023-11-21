@@ -1,9 +1,14 @@
 import React , { useState } from 'react'
+import { useContext } from 'react';
+import { AuthContext } from '../context/AuthContext'
+import { useNavigate } from 'react-router-dom';
+
 import Header from '../components/login/Steps.header'
 import Main from '../components/login/Step4.main'
 
 export default function Step4() {
-
+  const navigate = useNavigate();
+  const {loggedIn, setLoggedIn } = useContext(AuthContext);
   const[password, setPassword]=useState('');
 
   const onChangeCode = (e) => {
@@ -17,7 +22,8 @@ export default function Step4() {
       /[a-z]/.test(password) &&   // At least one lowercase letter
       /\d/.test(password) &&      // At least one digit
       /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(password)){
-      return;
+        setLoggedIn({...loggedIn,isLoggedIn:true});
+      navigate('/HomeFeed');
     } else{
       alert('Please enter valid password!');
     }
@@ -31,7 +37,6 @@ export default function Step4() {
  <Header step='4' />
  <Main onChangeCode={onChangeCode} onClickButton={onClickButton} />
 </div>
-{console.log(password)}
     </>
   )
 }

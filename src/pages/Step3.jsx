@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+
 import Header from '../components/login/Steps.header'
 import Main from '../components/login/Step3.main'
 
 
 export default function Step3() {
+  const navigate = useNavigate();
 
 
   const[isVerified, setIsVerified]=useState({
@@ -19,7 +22,11 @@ export default function Step3() {
     const length = isVerified['code'].length;
     if(length > 4  || length < 4){
       alert('Please enter correct verification code!');
-    } 
+    }else{
+      navigate('/step4');
+    }
+    
+     
   }
 
   return (

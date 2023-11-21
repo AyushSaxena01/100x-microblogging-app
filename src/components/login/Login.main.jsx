@@ -1,6 +1,13 @@
 import React from 'react';
 import Button from '../common/Button';
+import { useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext'
+import { useNavigate } from 'react-router-dom';
+
 export default function MainLogin(){
+
+  const navigate = useNavigate();
+  const {loggedIn, setLoggedIn } = useContext(AuthContext);
 
     return(
     <>
@@ -14,7 +21,10 @@ export default function MainLogin(){
               Join today.
             </span>
           </section>
-          <Button type="defaultwhite" size="m" colour = 'black' dimension='whitebutton'>
+          <Button type="defaultwhite" size="m" colour = 'black' dimension='whitebutton' onClick={
+              ()=>{
+                navigate("/step1")                  
+              }}>
           Create account
           </Button>
           <div className="flex flex-row gap-x-1 items-center justify-center self-stretch">
@@ -30,7 +40,11 @@ export default function MainLogin(){
             <span className="text-neutral/50 not-italic font-medium leading-1.2 text-xl font-Inter ">
               Already have an account?
             </span>
-            <Button type="outlined" size="l" colour = 'blue' dimension='blackbutton'>
+            <Button type="outlined" size="l" colour = 'blue' dimension='blackbutton' onClick={
+              ()=>{
+                setLoggedIn({...loggedIn,isLoggedIn:true});
+                navigate("/composetweet")                  
+              }}>
             Sign in
             </Button>
           </div>

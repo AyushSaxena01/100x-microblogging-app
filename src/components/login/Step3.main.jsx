@@ -20,7 +20,7 @@ export default function MainStep3({onChangeCode, onClickButton}) {
         <span className="font-Inter text-sm not-italic font-normal leading-1.2 text- text-neutral/500">Enter it below to verify janedoe@gmail.com</span>
       </div>
       <div className="flex flex-col items-end gap-y-3 self-stretch">
-        <InputCode  onChangeCode={onChangeCode} />
+        <InputCode  onChangeCode={onChangeCode} type='code' />
         <span className="font-Inter text-sm not-italic font-normal leading-1.2 text-twitter-blue-default">Didn’t receive a code?</span>        
       </div>
     </div>

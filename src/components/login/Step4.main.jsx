@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from '../common/Button'
 import PropTypes from 'prop-types';
-import InputPassword from '../common/InputPassword';
+import InputCode from '../common/InputCode';
 
 export default function MainStep4({onChangeCode, onClickButton}) {
 
@@ -18,7 +18,7 @@ export default function MainStep4({onChangeCode, onClickButton}) {
         <span className="font-Inter text-2xl not-italic font-bold leading-1.2 text-neutral/50">You’ll need a password</span>
         <span className="font-Inter text-sm not-italic font-normal leading-1.2 text- text-neutral/500">Make sure it’s 8 characters or more</span>
       </div>
-     <InputPassword onChangeCode={onChangeCode}></InputPassword>
+     <InputCode onChangeCode={onChangeCode} type='password'></InputCode>
     </div>
   </main>
   <footer className="flex flex-grow flex-shrink-0 basis-0 px-3.8 w-96.5 pb-5">
