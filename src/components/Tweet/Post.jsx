@@ -15,16 +15,16 @@ export default function Post({
 }) {
   return (
     <>
-     <div className="flex self-stretch py-2 px-4 items-start box-border border-b border-solid border-neutral/700">
-    <div className="flex flex-start flex-col">
+     <div className="flex self-stretch w-full py-2 px-4 items-start box-border border-b border-solid border-neutral/700">
+    <div className="flex self-stretch flex-start flex-col">
       <Avtar imgUrl={userImage} userHandle={userName} userName={userFullName} size='m'/>
       <div className="flex flex-row gap-x-4 justify-start">
         <section className="pl-12">
         </section>
-        <section className="-mt-6 flex flex-col gap-y-2">
-          <span className="font-Inter text-base not-italic font-normal leading-1.2 text-neutral/50">
-           {text}
-          </span>
+        <section className="-mt-6 flex flex-col w-full self-stretch gap-y-2">
+          <div className="flex font-Inter text-base not-italic font-normal w-full self-stretch leading-1.2 text-neutral/50">
+           {text.text}
+          </div>
           <div className="flex py-3 px-0 justify-between items-center self-stretch w-full">
               <CommentIcon count = {comments} />
 

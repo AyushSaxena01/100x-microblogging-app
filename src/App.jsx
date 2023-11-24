@@ -1,8 +1,6 @@
 
 import './App.css'
-import { useState , useContext } from 'react';
-import { AuthProvider } from './context/AuthProvider';
-import { AuthContext } from './context/AuthContext'
+import { AuthProvider } from './context/auth/AuthProvider';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -16,7 +14,6 @@ import Step4 from './pages/Step4';
 import UserProfile from './pages/UserProfile'
 import EditProfile from './pages/EditProfile';
 import ComposeTweet from './pages/ComposeTweet';
-import Test from './pages/test2';
 import HomeFeed from './pages/HomeFeed';
 
 const router = createBrowserRouter([
@@ -25,7 +22,7 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
-    path: "/composetweet",
+    path: "/ComposeTweet",
     element: <ComposeTweet />,
   },
   {
@@ -63,7 +60,6 @@ function App() {
   return (
   <>
 <AuthProvider>
-  {/* <TwitterApp /> */}
   <RouterProvider router={router} />
 </AuthProvider>
   </>

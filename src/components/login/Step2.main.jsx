@@ -1,6 +1,6 @@
 import React from 'react'
 import { useContext } from 'react';
-import { AuthContext } from '../../context/AuthContext'
+import { AuthContext } from '../../context/auth/AuthContext'
 import { useNavigate } from 'react-router-dom';
 
 import correct from '../../assets/correct.svg'

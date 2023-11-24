@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useContext } from 'react';
-import { AuthContext } from '../context/AuthContext'
+import { AuthContext } from '../context/auth/AuthContext'
 
 import Header from '../components/login/Steps.header';
 import Main from '../components/login/Step1.main'

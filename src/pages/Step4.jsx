@@ -1,6 +1,6 @@
 import React , { useState } from 'react'
 import { useContext } from 'react';
-import { AuthContext } from '../context/AuthContext'
+import { AuthContext } from '../context/auth/AuthContext'
 import { useNavigate } from 'react-router-dom';
 
 import Header from '../components/login/Steps.header'

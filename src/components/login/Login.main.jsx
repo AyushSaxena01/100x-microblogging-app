@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../common/Button';
 import { useContext } from 'react';
-import { AuthContext } from '../../context/AuthContext'
+import { AuthContext } from '../../context/auth/AuthContext'
 import { useNavigate } from 'react-router-dom';
 
 export default function MainLogin(){
@@ -43,7 +43,7 @@ export default function MainLogin(){
             <Button type="outlined" size="l" colour = 'blue' dimension='blackbutton' onClick={
               ()=>{
                 setLoggedIn({...loggedIn,isLoggedIn:true});
-                navigate("/composetweet")                  
+                navigate("/HomeFeed")                  
               }}>
             Sign in
             </Button>
